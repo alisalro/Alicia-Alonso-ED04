@@ -1,7 +1,7 @@
 package cuentas;
 
 public class CCuenta {
-
+//En esta clase están varios métodos
 
     private String nombre;
     private String cuenta;
