@@ -1,7 +1,8 @@
 package cuentas;
 
 public class CCuenta {
-/*En esta clase están varios métodos que simulan el comportamiento de un cajero 
+/**
+ * En esta clase están varios métodos que simulan el comportamiento de un cajero 
  * @author alicia
  * @version 1.0
  * @since 1
@@ -17,7 +18,13 @@ public class CCuenta {
 
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
-    	//En el método CCuenta se setean los valores de nombre, cuenta y saldo
+/**
+ * En el método CCuenta se setean los valores de nombre, cuenta y saldo
+ * @param nom Nombre del titular
+ * @param cue Cuenta
+ * @param sal Saldo
+ * @param tipo Tipo cuenta
+*/
     	
         setNombre(nom);
         setCuenta(cue);
@@ -26,13 +33,22 @@ public class CCuenta {
 
     public double estado()
     {
-    	//En el método estado se obtiene de valor de retorno el saldo
+/**
+ * En el método estado se obtiene de valor de retorno el saldo
+ * @return saldo
+*/
+    	
         return getSaldo();
     }
 
     public void ingresar(double cantidad) throws Exception
     {
-    	//En el método ingresar se controla que la cantidad a ingresar sea mayor de 0
+/**
+ * En el método ingresar se controla que la cantidad a ingresar sea mayor de 0
+ * @param cantidad
+ * @exception cantidad > 0
+*/
+    	
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
@@ -40,7 +56,12 @@ public class CCuenta {
 
     public void retirar(double cantidad) throws Exception
     {
-    	//En el método retirar se controla que la cantidad a retirar sea menor o igual a la disponible en la cuenta
+/**
+ * En el método retirar se controla que la cantidad a retirar sea menor o igual a la disponible en la cuenta
+ * @param cantidad
+ * @exception cantidad <= 0
+*/
+    	
         if (cantidad <= 0)
             throw new Exception ("No se puede retirar una cantidad negativa");
         if (estado()< cantidad)
